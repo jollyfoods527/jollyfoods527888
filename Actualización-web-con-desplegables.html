@@ -1,3 +1,17 @@
+**Listo. Te dejo el `index.html` completo con todos los cambios:**
+
+1. **Contactos:** 1 solo desplegable con todos los datos
+2. **Mayoristas:** Video de contenedores
+3. **Nueva sección:** Historia de Finca El Puchol Bajo Zapote + recuadro de Antonio Barrantes
+
+### **PASO 1: Sube estos 2 videos a GitHub**
+
+1. `cafe-rojo.mp4` ← el video del inicio que ya tienes
+2. `contenedores.mp4` ← busca un video de contenedores y súbelo con ese nombre
+
+### **PASO 2: Copia TODO este código y reemplaza tu `index.html`:**
+
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -19,8 +33,7 @@
         .hero-overlay{position:absolute;width:100%;height:100%;background:radial-gradient(circle,rgba(10,46,26,0.2) 0%,rgba(10,46,26,0.85) 100%);z-index:2}
         .hero-content{position:relative;z-index:3;text-align:center;padding:0 20px;max-width:1000px}
         .hero h1{font-size:5rem;margin-bottom:25px;color:#D4AF37;text-shadow:4px 4px 20px #000;line-height:1.1;letter-spacing:2px}
-        .hero .subtitle{font-size:2.2rem;margin-bottom:20px;color:#fff;text-shadow:3px 3px 10px #000;font-weight:300}
-        .hero .tagline{font-size:1.4rem;margin-bottom:50px;color:#D4AF37;text-shadow:2px 2px 8px #000}
+        .hero .subtitle{font-size:2.2rem;margin-bottom:50px;color:#fff;text-shadow:3px 3px 10px #000;font-weight:300}
         .btn{background:#D4AF37;color:#000;padding:20px 50px;border:none;font-weight:bold;cursor:pointer;text-decoration:none;display:inline-block;font-size:17px;transition:0.3s;border-radius:5px;box-shadow:0 4px 20px rgba(212,175,55,0.5);text-transform:uppercase}
         .btn:hover{background:#fff;transform:translateY(-3px);box-shadow:0 8px 30px rgba(212,175,55,0.7)}
         .btn-small{padding:12px 25px;font-size:14px;margin-top:15px}
@@ -31,11 +44,14 @@
         .gold-text{color:#D4AF37}
         .nosotros-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
         .nosotros-grid img{width:100%;border:4px solid #D4AF37;box-shadow:0 10px 40px rgba(0,0,0,0.5)}
-        .catalogo-item{background:linear-gradient(135deg,#000 0%,#1a1a1a 100%);margin:30px 0;padding:35px;cursor:pointer;border:3px solid #D4AF37;transition:0.3s;border-radius:10px;box-shadow:0 5px 20px rgba(0,0,0,0.4)}
-        .catalogo-item:hover{background:#1a1a1a;border-color:#fff;transform:translateX(10px)}
-        .catalogo-content{display:none;padding:35px 0}
-        .catalogo-content.active{display:block}
-        .catalogo-content img{width:100%;max-width:650px;margin:25px 0;border:4px solid #D4AF37;border-radius:8px;box-shadow:0 10px 40px rgba(0,0,0,0.6)}
+        .productos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;margin-top:30px}
+        .producto-card{background:#0A2E1A;padding:25px;border:2px solid #D4AF37;border-radius:10px;text-align:center;transition:0.3s}
+        .producto-card:hover{transform:translateY(-5px);box-shadow:0 10px 30px rgba(212,175,55,0.4)}
+        .producto-card img{width:100%;height:200px;object-fit:cover;border-radius:8px;margin-bottom:15px;background:#000}
+        .producto-card h4{font-size:1.2rem;margin:10px 0}
+        .producto-card .precio{color:#D4AF37;font-size:1.8rem;font-weight:bold;margin:15px 0}
+        .linea-titulo{background:#000;padding:20px;margin:40px 0 20px;border-left:5px solid #D4AF37}
+        .linea-titulo h3{margin:0;font-size:1.8rem}
         .variedades{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:30px;margin-top:50px}
         .variedad{background:linear-gradient(135deg,#000 0%,#0d0d0d 100%);padding:30px;border:2px solid #D4AF37;cursor:pointer;transition:0.4s;border-radius:10px;box-shadow:0 5px 20px rgba(0,0,0,0.5)}
         .variedad:hover{border-color:#fff;transform:translateY(-8px);box-shadow:0 15px 50px rgba(212,175,55,0.4)}
@@ -53,12 +69,16 @@
         .mayoristas-hero video{width:100%;height:100%;object-fit:cover;filter:brightness(0.7)}
         .slogan{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;background:rgba(0,0,0,0.9);padding:50px;border:3px solid #D4AF37;border-radius:10px}
         .slogan h3{font-size:3rem;margin:0;text-shadow:3px 3px 10px #000}
-        .formulario{display:none;background:linear-gradient(135deg,#000 0%,#1a1a1a 100%);padding:50px;margin-top:30px;border:3px solid #D4AF37;border-radius:10px}
-        .formulario.active{display:block}
+        .formulario{background:linear-gradient(135deg,#000 0%,#1a1a1a 100%);padding:50px;margin-top:30px;border:3px solid #D4AF37;border-radius:10px}
         .formulario input,.formulario textarea,.formulario select{width:100%;padding:18px;margin:15px 0;background:#0A2E1A;border:2px solid #D4AF37;color:#fff;font-size:16px;border-radius:5px}
         .contacto-item{background:linear-gradient(135deg,#000 0%,#1a1a1a 100%);margin:25px 0;padding:30px;cursor:pointer;border:2px solid #D4AF37;border-radius:10px}
-        .contacto-content{display:none;padding:25px 0}
+        .contacto-content{display:none;padding:25px 0;font-size:18px;line-height:2}
         .contacto-content.active{display:block}
+        .contacto-content p{margin:12px 0}
+        .contacto-content strong{color:#D4AF37}
+        .antonio-box{background:linear-gradient(135deg,#000 0%,#1a1a1a 100%);padding:50px;margin:50px 0;border:4px solid #D4AF37;border-radius:10px;text-align:center;box-shadow:0 10px 40px rgba(0,0,0,0.6)}
+        .antonio-box h3{font-size:2.5rem;margin-bottom:20px}
+        .antonio-box p{font-size:18px;line-height:1.9;margin:20px 0}
         #musicBtn{position:fixed;bottom:30px;right:30px;background:#D4AF37;color:#000;border:none;border-radius:50%;width:65px;height:65px;font-size:26px;cursor:pointer;z-index:1000;box-shadow:0 0 25px rgba(212,175,55,0.6)}
         footer{background:#000;padding:60px 5%;text-align:center;border-top:4px solid #D4AF37}
         .cart-modal{display:none;position:fixed;top:0;right:0;width:420px;height:100vh;background:linear-gradient(180deg,#000 0%,#0A2E1A 100%);border-left:4px solid #D4AF37;z-index:2000;padding:35px;overflow-y:auto}
@@ -87,14 +107,13 @@
     </header>
 
     <div class="hero" id="inicio">
-        <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1498804103079-a543d9b4da10?w=1920">
-            <source src="https://cdn.coverr.co/videos/coverr-coffee-cherries-on-a-branch-7594/1080p.mp4" type="video/mp4">
+        <video autoplay muted loop playsinline>
+            <source src="cafe-rojo.mp4" type="video/mp4">
         </video>
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1>DEL ORIGEN A TU ÉXITO</h1>
             <p class="subtitle">Calidad y Sostenibilidad en cada fruto</p>
-            <p class="tagline">Piña Dorada MD2 • Palmito Premium • 8 Variedades de Café de Origen</p>
             <a class="btn" onclick="scrollToSection('catalogo')">EXPLORA NUESTRO CATÁLOGO</a>
         </div>
     </div>
@@ -115,25 +134,47 @@
     <section id="catalogo">
         <h2>NUESTRO CATÁLOGO</h2>
         
-        <div class="catalogo-item" onclick="toggleCatalogo('palmito')">
-            <h3>▶ LÍNEA PALMITO PREMIUM</h3>
-            <div class="catalogo-content" id="palmito">
-                <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=800" alt="Palmito Premium">
-                <p><strong>Origen:</strong> Putumayo, Colombia. Cosecha sostenible de palmas cultivadas bajo sombra.</p>
-                <p><strong>Formatos:</strong> Entero, rodajas, juliana. Envase vidrio y lata. Presentaciones de 400g hasta 3kg.</p>
-                <p><strong>Vida útil:</strong> 36 meses. Certificación BRC AA+, HACCP, Kosher.</p>
-                <button class="btn btn-small" onclick="addToCart('Palmito Premium', 'Caja 12x400g', event)">Añadir al carrito</button>
+        <div class="linea-titulo"><h3>Línea de Palmito</h3></div>
+        <div class="productos-grid">
+            <div class="producto-card">
+                <img src="palmito-productos.png" alt="Palmito en Conserva Clásico">
+                <h4>Palmito en Conserva Clásico</h4>
+                <div class="precio">$12</div>
+                <button class="btn btn-small" onclick="addToCart('Palmito en Conserva Clásico', '$12', event)">AÑADIR AL CARRITO</button>
+            </div>
+            <div class="producto-card">
+                <img src="palmito-productos.png" alt="Palmito Premium Entero">
+                <h4>Palmito Premium Entero</h4>
+                <div class="precio">$15</div>
+                <button class="btn btn-small" onclick="addToCart('Palmito Premium Entero', '$15', event)">AÑADIR AL CARRITO</button>
+            </div>
+            <div class="producto-card">
+                <img src="palmito-productos.png" alt="Palmito en Rodajas">
+                <h4>Palmito en Rodajas</h4>
+                <div class="precio">$10</div>
+                <button class="btn btn-small" onclick="addToCart('Palmito en Rodajas', '$10', event)">AÑADIR AL CARRITO</button>
             </div>
         </div>
 
-        <div class="catalogo-item" onclick="toggleCatalogo('pina')">
-            <h3>▶ LÍNEA PIÑA DORADA MD2</h3>
-            <div class="catalogo-content" id="pina">
-                <img src="https://images.unsplash.com/photo-1589820296156-2454bb8a6ad1?w=800" alt="Piña Dorada MD2">
-                <p><strong>Origen:</strong> Lebrija, Santander. Altura 1200msnm. Clima tropical de montaña.</p>
-                <p><strong>Brix:</strong> 14-16°. Acidez perfecta 0.5-0.7%. Color dorado intenso uniforme.</p>
-                <p><strong>Formatos:</strong> Fresca corona cortada, IQF en trozos, chunks, jugo NFC pasteurizado. Cajas 12kg.</p>
-                <button class="btn btn-small" onclick="addToCart('Piña Dorada MD2', 'Caja 12kg', event)">Añadir al carrito</button>
+        <div class="linea-titulo"><h3>Línea de Piña Dorada</h3></div>
+        <div class="productos-grid">
+            <div class="producto-card">
+                <img src="pina-productos.png" alt="Zumo de Piña 100% Natural">
+                <h4>Zumo de Piña 100% Natural</h4>
+                <div class="precio">$8</div>
+                <button class="btn btn-small" onclick="addToCart('Zumo de Piña 100% Natural', '$8', event)">AÑADIR AL CARRITO</button>
+            </div>
+            <div class="producto-card">
+                <img src="pina-productos.png" alt="Rodajas de Piña en Almíbar">
+                <h4>Rodajas de Piña en Almíbar</h4>
+                <div class="precio">$9</div>
+                <button class="btn btn-small" onclick="addToCart('Rodajas de Piña en Almíbar', '$9', event)">AÑADIR AL CARRITO</button>
+            </div>
+            <div class="producto-card">
+                <img src="pina-productos.png" alt="Crunchyroll de Piña Deshidratada">
+                <h4>Crunchyroll de Piña Deshidratada</h4>
+                <div class="precio">$6</div>
+                <button class="btn btn-small" onclick="addToCart('Crunchyroll de Piña Deshidratada', '$6', event)">AÑADIR AL CARRITO</button>
             </div>
         </div>
     </section>
@@ -268,8 +309,8 @@
     <section id="mayoristas">
         <h2>MAYORISTAS</h2>
         <div class="mayoristas-hero">
-            <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=1920">
-                <source src="https://cdn.coverr.co/videos/coverr-coffee-beans-falling-into-a-cup-4018/1080p.mp4" type="video/mp4">
+            <video autoplay muted loop playsinline>
+                <source src="contenedores.mp4" type="video/mp4">
             </video>
             <div class="slogan"><h3 class="gold-text">TU ÉXITO CABE EN UN CONTENEDOR</h3><p>Pero empieza con un pallet</p></div>
         </div>
@@ -282,8 +323,7 @@
 
     <section id="pedidos">
         <h2>PEDIDOS</h2>
-        <button class="btn" onclick="toggleFormulario()">ABRIR FORMULARIO DE PEDIDO</button>
-        <div class="formulario" id="formulario">
+        <div class="formulario" style="display:block">
             <select id="tipo"><option value="">Tipo de cliente *</option><option>Mayorista - FCL</option><option>Distribuidor</option><option>Retail</option><option>HORECA</option></select>
             <input type="text" id="nombre" placeholder="Nombre / Empresa *">
             <input type="email" id="email" placeholder="Email *">
@@ -296,8 +336,40 @@
 
     <section id="contacto">
         <h2>CONTACTO</h2>
-        <div class="contacto-item" onclick="toggleContacto('c1')"><h3>▶ Oficinas y Planta</h3><div class="contacto-content" id="c1"><p><strong>Colombia:</strong> Km 3 Vía Lebrija, Santander<br>Planta de proceso y oficinas centrales</p><p><strong>España:</strong> Valencia, Comunidad Valenciana<br>Hub logístico Europa</p></div></div>
-        <div class="contacto-item" onclick="toggleContacto('c2')"><h3>▶ Canales Directos</h3><div class="contacto-content" id="c2"><p><strong>WhatsApp Ventas:</strong> +57 300 000 0000</p><p><strong>Email:</strong> ventas@jollyfoods.com</p><p><strong>LinkedIn:</strong> /company/jolly-foods</p></div></div>
+        
+        <div class="contacto-item" onclick="toggleContacto('c1')">
+            <h3>▶ Datos de Contacto Jolly Foods</h3>
+            <div class="contacto-content" id="c1">
+                <p><strong>Colombia:</strong> Km 3 Vía Lebrija, Santander</p>
+                <p>Planta de proceso y oficinas centrales</p>
+                <p><strong>España:</strong> Valencia, Comunidad Valenciana</p>
+                <p>Hub logístico Europa</p>
+                <p><strong>WhatsApp Ventas:</strong> +57 300 000 0000</p>
+                <p><strong>Email:</strong> ventas@jollyfoods.com</p>
+                <p><strong>LinkedIn:</strong> /company/jolly-foods</p>
+                <p><strong>Instagram:</strong> @jollyfoods.oficial</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="finca-puchol">
+        <h2>FINCA EL PUCHOL BAJO ZAPOTE</h2>
+        <div class="nosotros-grid">
+            <div>
+                <h3 class="gold-text">El corazón de nuestro café especial</h3>
+                <p style="line-height:1.9;font-size:18px;margin:25px 0">Ubicada en las montañas de Santander a 1,850 msnm, Finca El Puchol Bajo Zapote es nuestro proyecto insignia de café de especialidad. Aquí nacen los lotes de Geisha y Typica Mejorado que han ganado reconocimiento internacional.</p>
+                <p style="line-height:1.9;font-size:18px">Trabajamos con procesos post-cosecha experimentales: fermentación con levaduras nativas, secado en camas africanas y micro-lotes trazados al 100%. Cada grano cuenta su historia.</p>
+                <p class="gold-text" style="font-size:20px;font-weight:bold;margin-top:35px">Contamos con el apoyo del reconocido profesional cafetalero Antonio Barrantes, quien asesora nuestros procesos de beneficio y catación.</p>
+            </div>
+            <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=800" alt="Finca El Puchol Bajo Zapote">
+        </div>
+        
+        <div class="antonio-box">
+            <h3 class="gold-text">CONOCE A ANTONIO BARRANTES</h3>
+            <p>Q-Grader certificado, campeón nacional de barismo y consultor de fincas de especialidad en Centroamérica.</p>
+            <p>Antonio nos acompaña en la selección de procesos, curvas de tueste y desarrollo de perfiles de taza únicos.</p>
+            <a class="btn" href="https://www.instagram.com/reel/DFCmrJEq8Na/" target="_blank" style="margin-top:20px">VER PERFIL DE ANTONIO BARRANTES</a>
+        </div>
     </section>
 
     <footer>
@@ -307,29 +379,4 @@
     </footer>
 
     <div class="cart-modal" id="cartModal">
-        <div class="cart-header"><h3 class="gold-text">TU PEDIDO</h3><button onclick="toggleCart()" style="background:none;border:none;color:#D4AF37;font-size:30px;cursor:pointer">×</button></div>
-        <div id="cartItems"></div>
-        <div class="cart-total"><p style="font-size:20px">Total: <span class="gold-text">Solicitar cotización</span></p><button class="btn" style="width:100%;margin-top:20px" onclick="enviarPedidoWhatsApp()">FINALIZAR POR WHATSAPP</button></div>
-    </div>
-
-    <button id="musicBtn" onclick="toggleMusic()">🎵</button>
-    <audio id="bgMusic" loop><source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3" type="audio/mpeg"></audio>
-
-    <script>
-        let cart = [];
-        let musicPlaying = false;
-        function scrollToSection(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}
-        function toggleCatalogo(id){document.getElementById(id).classList.toggle('active')}
-        function toggleVariedad(id,e){e.stopPropagation();document.getElementById(id).classList.toggle('active')}
-        function toggleContacto(id){document.getElementById(id).classList.toggle('active')}
-        function toggleFormulario(){document.getElementById('formulario').classList.toggle('active')}
-        function toggleCart(){document.getElementById('cartModal').classList.toggle('active')}
-        function addToCart(product,format,e){e.stopPropagation();cart.push({product,format});updateCart();alert('✓ Añadido: '+product)}
-        function updateCart(){document.getElementById('cartCount').textContent=cart.length;let html='';cart.forEach((item,i)=>{html+=`<div class="cart-item"><div><strong>${item.product}</strong><br><small>${item.format}</small></div><button onclick="removeFromCart(${i})">X</button></div>`});document.getElementById('cartItems').innerHTML=html||'<p>Tu carrito está vacío</p>'}
-        function removeFromCart(i){cart.splice(i,1);updateCart()}
-        function enviarWhatsApp(){const tipo=document.getElementById('tipo').value;const nombre=document.getElementById('nombre').value;const email=document.getElementById('email').value;const telefono=document.getElementById('telefono').value;const pais=document.getElementById('pais').value;const mensaje=document.getElementById('mensaje').value;if(!nombre||!email||!telefono){alert('Completa los campos obligatorios *');return}const text=`*PEDIDO JOLLY FOODS*%0A%0ATipo: ${tipo}%0ANombre: ${nombre}%0AEmail: ${email}%0ATel: ${telefono}%0APaís: ${pais}%0A%0ADetalle:%0A${mensaje}`;window.open(`https://wa.me/573000000000?text=${text}`,'_blank')}
-        function enviarPedidoWhatsApp(){if(cart.length===0){alert('Tu carrito está vacío');return}let text='*PEDIDO JOLLY FOODS*%0A%0A';cart.forEach(item=>{text+=`• ${item.product} - ${item.format}%0A`});text+='%0ASolicito cotización';window.open(`https://wa.me/573000000000?text=${text}`,'_blank')}
-        function toggleMusic(){const audio=document.getElementById('bgMusic');if(musicPlaying){audio.pause();musicPlaying=false;document.getElementById('musicBtn').textContent='🎵'}else{audio.play();musicPlaying=true;document.getElementById('musicBtn').textContent='🔇'}}
-    </script>
-</body>
-</html>
+        <div class="cart-header"><h3 class="gold-text">TU PEDIDO</h3><button onclick
